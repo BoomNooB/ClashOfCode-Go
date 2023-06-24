@@ -1,0 +1,33 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Buffer(make([]byte, 1000000), 1000000)
+
+	scanner.Scan()
+	x := scanner.Text()
+
+	charCounts := make(map[rune]int)
+
+	for _, char := range x {
+		charCounts[char]++
+	}
+
+	result := charCounts['e'] + 1 + charCounts['E']
+
+	fmt.Println(result)
+
+}
+
+//Reg-Ex
+
+// re := regexp.MustCompile("e")
+// count := len(re.FindAllStringIndex(x, -1))
+
+// fmt.Println(count)

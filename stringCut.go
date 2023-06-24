@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	str := "H"
+	var str string
 	twoCharString := func() string {
 		if len(str) >= 2 {
 			return str[:2]
